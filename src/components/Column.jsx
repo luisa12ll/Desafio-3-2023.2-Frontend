@@ -3,19 +3,36 @@ import TaskCard from "./TaskCard";
 import NewTaskModal from "./NewTaskModal";
 import "../styles/Column.css";
 
-export default function Column({ title, column, tasks, addTask, updateTaskColumn }) {
+export default function Column({
+  title,
+  column,
+  tasks,
+  addTask,
+  updateTaskColumn,
+  deleteTask,
+  updateTask, 
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const [taskToEdit, setTaskToEdit] = useState(null);
 
-  const handleAddTask = (task) => {
-    const newTask = {
-      id: Date.now(),
-      title: task.title,
-      description: task.description,
-      date: task.date,
-      column: column,
-    };
-    addTask(newTask);
+  const handleSaveTask = (taskData) => {
+    if (taskToEdit) {
+      updateTask(taskToEdit.id, taskData);
+    } else {
+      addTask({ ...taskData, column });
+    }
+    handleCloseModal(); 
+  };
+
+  const handleStartEdit = (task) => {
+    setTaskToEdit(task); 
+    setIsModalOpen(true); 
+  };
+ 
+  const handleCloseModal = () => {
     setIsModalOpen(false);
+    setTaskToEdit(null); 
   };
 
   return (
@@ -23,9 +40,9 @@ export default function Column({ title, column, tasks, addTask, updateTaskColumn
       <div className="column-header">
         <h2>{title}</h2>
         <button
-          type="button" // 👈 evita o comportamento de submit
+          type="button"
           className="new-task-btn"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => setIsModalOpen(true)} 
         >
           + Nova Tarefa
         </button>
@@ -39,15 +56,17 @@ export default function Column({ title, column, tasks, addTask, updateTaskColumn
               key={task.id}
               task={task}
               updateTaskColumn={updateTaskColumn}
+              deleteTask={deleteTask}
+              onEdit={handleStartEdit}
             />
           ))}
       </div>
 
-      {/* Modal controlado */}
       <NewTaskModal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onAddTask={handleAddTask}
+        onClose={handleCloseModal}
+        onSaveTask={handleSaveTask} 
+        taskToEdit={taskToEdit} 
       />
     </div>
   );

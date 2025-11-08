@@ -1,110 +1,44 @@
-.App {
-    text-align: center;
-    background-color: #f8f5ff;
+.app-container {
     min-height: 100vh;
-    padding: 40px 20px;
-    font-family: "Poppins", sans-serif;
-}
+    padding: 20px;
+    text-align: center;
 
-.main-title {
-    font-size: 2rem;
-    color: #520480;
-    margin-bottom: 30px;
-    font-weight: 700;
-}
-
-.columns-container {
-    display: flex;
-    /* ✅ Coloca lado a lado */
-    justify-content: center;
-    /* Centraliza horizontalmente */
-    align-items: flex-start;
-    /* Alinha o topo */
-    gap: 24px;
-    /* Espaçamento entre colunas */
-    flex-wrap: wrap;
-    /* Permite quebrar linha se tela for pequena */
-    width: 100%;
-}
-
-.column {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    width: 300px;
-    min-height: 400px;
     display: flex;
     flex-direction: column;
-}
-
-.column-header {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
 }
 
-.add-task-btn {
-    background-color: #520480;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 6px 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.add-task-btn:hover {
-    background-color: #6b00b8;
-}
-
-.task-list {
-    flex: 1;
-}
-
-.task-card {
-    background-color: #f5ebff;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.move-btn {
-    background-color: #b77fe8;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
-.move-btn:hover {
-    background-color: #520480;
-}
-
-.app-container {
-    text-align: center;
-    padding: 30px;
-    background: transparent;
-    /* remove o quadrado branco */
+.app-title {
+    color: #4a148c;
+    margin-bottom: 30px;
 }
 
 .columns-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-around;
     gap: 20px;
-    flex-wrap: nowrap;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
-body {
-    background-color: #f3e8ff;
+.app-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(74, 20, 140, 0.1);
+    color: #4a148c;
+}
+
+.app-footer p {
     margin: 0;
-    font-family: "Poppins", sans-serif;
+    padding: 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.app-footer p:last-child {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 4px;
 }
