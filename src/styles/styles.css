@@ -1,0 +1,110 @@
+.App {
+    text-align: center;
+    background-color: #f8f5ff;
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-title {
+    font-size: 2rem;
+    color: #520480;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.columns-container {
+    display: flex;
+    /* ✅ Coloca lado a lado */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: flex-start;
+    /* Alinha o topo */
+    gap: 24px;
+    /* Espaçamento entre colunas */
+    flex-wrap: wrap;
+    /* Permite quebrar linha se tela for pequena */
+    width: 100%;
+}
+
+.column {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 300px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.add-task-btn {
+    background-color: #520480;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.add-task-btn:hover {
+    background-color: #6b00b8;
+}
+
+.task-list {
+    flex: 1;
+}
+
+.task-card {
+    background-color: #f5ebff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.move-btn {
+    background-color: #b77fe8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.move-btn:hover {
+    background-color: #520480;
+}
+
+.app-container {
+    text-align: center;
+    padding: 30px;
+    background: transparent;
+    /* remove o quadrado branco */
+}
+
+.columns-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+body {
+    background-color: #f3e8ff;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
